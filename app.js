@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const goodsRouter = require("./routes/goods");
+
+// localhost:3000/api -> goodsRouter
+app.use("/api", [goodsRouter]);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
